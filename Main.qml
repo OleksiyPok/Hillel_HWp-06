@@ -24,9 +24,10 @@ ApplicationWindow {
             }
             TextField {
                 id: celsiusInput
+                placeholderText:'celsius'
                 width: 100
                 onTextChanged:  {
-                    controller.setCVal  (celsiusInput.text)
+                    controller.cValChanged  (celsiusInput.text)
                     // if (focus) {
                     //     let c = parseFloat(text)
                     //     if (!isNaN(c)) {
@@ -47,9 +48,10 @@ ApplicationWindow {
             }
             TextField {
                 id: fahrenheitInput
+                placeholderText:'fahrenheit'
                 width: 100
                 onTextChanged: {
-                    controller.setKVal(fahrenheitInput.text)
+                    controller.fValChanged(fahrenheitInput.text)
                     // if (focus) {
                     //     let f = parseFloat(text)
                     //     if (!isNaN(f)) {
@@ -71,9 +73,10 @@ ApplicationWindow {
             }
             TextField {
                 id: kelvinInput
+                placeholderText:'kelvin'
                 width: 100
                 onTextChanged: {
-                    controller.setFVal(kelvinInput.text)
+                    controller.kValChanged(kelvinInput.text)
                     // if (focus) {
                     //     let k = parseFloat(text)
                     //     if (!isNaN(k)) {

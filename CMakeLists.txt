@@ -26,6 +26,7 @@ qt_add_qml_module(appTCalc
     SOURCES
         tcalccontroller.h tcalccontroller.cpp
         tcalcmodel.h tcalcmodel.cpp
+        SOURCES util.h util.cpp
 )
 
 qt_add_resources(APP_RESOURCES resources.qrc)

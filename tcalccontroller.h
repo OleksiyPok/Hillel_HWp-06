@@ -9,16 +9,15 @@ class TCalcController : public QObject {
 
   public:
   explicit TCalcController(TCalcModel *model, QObject *parent = nullptr);
-  Q_INVOKABLE void setCVal(QString cVal);
-  Q_INVOKABLE void setKVal(QString kVal);
-  Q_INVOKABLE void setFVal(QString fVal);
 
-  double cCalc();
-  double kCalc();
-  double fCalc();
+  Q_INVOKABLE bool cValChanged(QString cVal);
+  Q_INVOKABLE bool kValChanged(QString kVal);
+  Q_INVOKABLE bool fValChanged(QString fVal);
 
   private:
   TCalcModel *model;
+
+  double roundTo(double value, int digits);
 
   signals:
 };
