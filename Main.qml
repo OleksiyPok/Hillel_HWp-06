@@ -28,13 +28,6 @@ ApplicationWindow {
                 width: 100
                 onTextChanged:  {
                     controller.cValChanged  (celsiusInput.text)
-                    // if (focus) {
-                    //     let c = parseFloat(text)
-                    //     if (!isNaN(c)) {
-                    //         fahrenheitInput.text = (c * 9/5 + 32).toFixed(2)
-                    //         kelvinInput.text = (c + 273.15).toFixed(2)
-                    //     }
-                    // }
                 }
             }
         }
@@ -52,13 +45,6 @@ ApplicationWindow {
                 width: 100
                 onTextChanged: {
                     controller.fValChanged(fahrenheitInput.text)
-                    // if (focus) {
-                    //     let f = parseFloat(text)
-                    //     if (!isNaN(f)) {
-                    //         celsiusInput.text = ((f - 32) * 5/9).toFixed(2)
-                    //         kelvinInput.text = (((f - 32) * 5/9) + 273.15).toFixed(2)
-                    //     }
-                    // }
                 }
 
             }
@@ -77,13 +63,6 @@ ApplicationWindow {
                 width: 100
                 onTextChanged: {
                     controller.kValChanged(kelvinInput.text)
-                    // if (focus) {
-                    //     let k = parseFloat(text)
-                    //     if (!isNaN(k)) {
-                    //         celsiusInput.text = (k - 273.15).toFixed(2)
-                    //         fahrenheitInput.text = ((k - 273.15) * 9/5 + 32).toFixed(2)
-                    //     }
-                    // }
                 }
             }
         }
