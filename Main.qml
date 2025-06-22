@@ -26,6 +26,7 @@ ApplicationWindow {
                 id: celsiusInput
                 placeholderText:'celsius'
                 width: 100
+                text: model.cVal
                 onTextChanged:  {
                     controller.cValChanged  (celsiusInput.text)
                 }
@@ -43,6 +44,7 @@ ApplicationWindow {
                 id: fahrenheitInput
                 placeholderText:'fahrenheit'
                 width: 100
+                text: model.fVal
                 onTextChanged: {
                     controller.fValChanged(fahrenheitInput.text)
                 }
@@ -61,6 +63,7 @@ ApplicationWindow {
                 id: kelvinInput
                 placeholderText:'kelvin'
                 width: 100
+                 text: model.kVal
                 onTextChanged: {
                     controller.kValChanged(kelvinInput.text)
                 }

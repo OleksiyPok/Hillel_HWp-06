@@ -14,15 +14,24 @@ TCalcModel::TCalcModel(double cVal, double fVal, double kVal, QObject *parent)
 
 void TCalcModel::setCVal(double cVal)
 {
-    this->_cVal = cVal;
-};
+    if (this->_cVal != cVal) {
+        this->_cVal = cVal;
+        emit this->cValChanged(this->_cVal);
+    };
+}
 void TCalcModel::setFVal(double fVal)
 {
-    this->_fVal = fVal;
+    if (this->_fVal != fVal) {
+        this->_fVal = fVal;
+        emit this->fValChanged(this->_fVal);
+    }
 };
 void TCalcModel::setKVal(double kVal)
 {
-    this->_kVal = kVal;
+    if (this->_kVal != kVal) {
+        this->_kVal = kVal;
+        emit this->kValChanged(this->_kVal);
+    }
 };
 
 // double TCalcModel::getCelsiusValue()
@@ -30,15 +39,15 @@ void TCalcModel::setKVal(double kVal)
 //     return this->_celsiusValue;
 // };
 
-double TCalcModel::getCVal()
+double TCalcModel::getCVal() const
 {
     return this->_cVal;
 };
-double TCalcModel::getFVal()
+double TCalcModel::getFVal() const
 {
     return this->_fVal;
 };
-double TCalcModel::getKVal()
+double TCalcModel::getKVal() const
 {
     return this->_kVal;
 };

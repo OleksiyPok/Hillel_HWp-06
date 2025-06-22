@@ -16,9 +16,9 @@ public:
     void setFVal(double fVal);
     void setKVal(double kVal);
     // double getCelsiusValue();
-    double getCVal();
-    double getFVal();
-    double getKVal();
+    double getCVal() const;
+    double getFVal() const;
+    double getKVal() const;
 
 private:
     // double _celsiusValue;

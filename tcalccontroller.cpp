@@ -16,12 +16,11 @@ bool TCalcController::cValChanged(QString cVal)
         this->model->setCVal(_cVal);
 
         double kelvin = Util::roundTo((_cVal + 273.15), 2);
-        model->setFVal(kelvin);
-        qDebug() << "kelvin: " << kelvin;
+        model->setKVal(kelvin);
+        qDebug() << "kelvin_model: " << model->getKVal();
 
         double fahrenheit = Util::roundTo((_cVal * 9 / 5 + 32), 2);
         model->setFVal(fahrenheit);
-        qDebug() << "fahrenheit: " << fahrenheit;
         qDebug() << "fahrenheit_model: " << model->getFVal();
 
         return true;
@@ -39,12 +38,12 @@ bool TCalcController::fValChanged(QString fVal)
         this->model->setCVal(_fVal);
 
         double celsius = Util::roundTo(((_fVal - 32) * 5 / 9), 2);
-        model->setFVal(celsius);
-        qDebug() << "celsius: " << celsius;
+        model->setCVal(celsius);
+        qDebug() << "celsius_model: " << model->getCVal();
 
         double kelvin = Util::roundTo((((_fVal - 32) * 5 / 9) + 273.15), 2);
-        model->setFVal(kelvin);
-        qDebug() << "kelvin: " << kelvin;
+        model->setKVal(kelvin);
+        qDebug() << "kelvin_model: " << model->getKVal();
 
         return true;
     }
@@ -60,12 +59,12 @@ bool TCalcController::kValChanged(QString kVal)
         this->model->setCVal(_kVal);
 
         double celsius = Util::roundTo((_kVal - 273.15), 2);
-        model->setFVal(celsius);
-        qDebug() << "celsius: " << celsius;
+        model->setCVal(celsius);
+        qDebug() << "celsius_model: " << model->getCVal();
 
         double fahrenheit = Util::roundTo(((_kVal - 273.15) * 9 / 5 + 32), 2);
         model->setFVal(fahrenheit);
-        qDebug() << "fahrenheit: " << fahrenheit;
+        qDebug() << "fahrenheit_model: " << model->getFVal();
 
         return true;
     }

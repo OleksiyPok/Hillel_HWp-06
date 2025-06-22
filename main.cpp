@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     app.setWindowIcon(QIcon(":/icons/favicon.ico"));
 
-    TCalcModel *model = new TCalcModel(0, 0, 0);
+    TCalcModel *model = new TCalcModel(1, 0, 0);
     TCalcController *controller = new TCalcController(model);
 
     QQmlApplicationEngine engine;
