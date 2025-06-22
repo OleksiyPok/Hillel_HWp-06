@@ -22,6 +22,7 @@ bool TCalcController::cValChanged(QString cVal)
         double fahrenheit = Util::roundTo((_cVal * 9 / 5 + 32), 2);
         model->setFVal(fahrenheit);
         qDebug() << "fahrenheit: " << fahrenheit;
+        qDebug() << "fahrenheit_model: " << model->getFVal();
 
         return true;
     }
