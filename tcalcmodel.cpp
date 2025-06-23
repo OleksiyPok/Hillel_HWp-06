@@ -10,11 +10,6 @@ TCalcModel::TCalcModel(double cVal, double fVal, double kVal, QObject *parent)
     , QObject{parent}
 {}
 
-// void TCalcModel::setCelsiusValue(double celsiusValue)
-// {
-//     this->_celsiusValue = celsiusValue;
-// };
-
 void TCalcModel::setCVal(double cVal)
 {
     if (this->_cVal != cVal) {
@@ -36,11 +31,6 @@ void TCalcModel::setKVal(double kVal)
         emit this->kValChanged(this->_kVal);
     }
 };
-
-// double TCalcModel::getCelsiusValue()
-// {
-//     return this->_celsiusValue;
-// };
 
 double TCalcModel::getCVal() const
 {

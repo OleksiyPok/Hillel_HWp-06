@@ -14,7 +14,7 @@ class TCalcModel : public QObject {
 
 public:
     explicit TCalcModel(double cVal, double fVal, double kVal, QObject *parent = nullptr);
-    // void setCelsiusValue(double celsiusValue);
+
     void setCVal(double cVal);
     void setFVal(double fVal);
     void setKVal(double kVal);
@@ -22,8 +22,6 @@ public:
     void setCValid(bool val);
     void setFValid(bool val);
     void setKValid(bool val);
-
-    // double getCelsiusValue();
 
     double getCVal() const;
     double getFVal() const;
@@ -34,7 +32,6 @@ public:
     bool getKValid() const;
 
 private:
-    // double _celsiusValue;
     double _cVal;
     double _fVal;
     double _kVal;
