@@ -32,8 +32,7 @@ ApplicationWindow {
                 }
                 background: Rectangle {
                     id: celsiusInputBackground
-                    implicitHeight: celsiusInput.height
-                    implicitWidth: celsiusInput.width
+                    anchors.fill: parent
 
                     border.color: "transparent"
                     border.width: 2
@@ -58,8 +57,7 @@ ApplicationWindow {
                 }
                 background: Rectangle {
                     id: fahrenheitInputBackground
-                    implicitHeight: fahrenheitInput.height
-                    implicitWidth: fahrenheitInput.width
+                    anchors.fill: parent
 
                     border.color: "transparent"
                     border.width: 2
@@ -85,8 +83,7 @@ ApplicationWindow {
                 }
                 background: Rectangle {
                     id: kelvinInputBackground
-                    implicitHeight: kelvinInput.height
-                    implicitWidth: kelvinInput.width
+                    anchors.fill: parent
 
                     border.color: "transparent"
                     border.width: 2
