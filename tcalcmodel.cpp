@@ -4,6 +4,9 @@ TCalcModel::TCalcModel(double cVal, double fVal, double kVal, QObject *parent)
     : _cVal(cVal)
     , _fVal(fVal)
     , _kVal(kVal)
+    , cValid(true)
+    , kValid(true)
+    , fValid(true)
     , QObject{parent}
 {}
 
@@ -50,4 +53,33 @@ double TCalcModel::getFVal() const
 double TCalcModel::getKVal() const
 {
     return this->_kVal;
+};
+
+bool TCalcModel::getCValid() const
+{
+    return this->cValid;
+};
+bool TCalcModel::getFValid() const
+{
+    return this->fValid;
+};
+bool TCalcModel::getKValid() const
+{
+    return this->kValid;
+};
+
+void TCalcModel::setCValid(bool val)
+{
+    this->cValid = val;
+    emit this->cValidChanged(this->cValid);
+};
+void TCalcModel::setFValid(bool val)
+{
+    this->fValid = val;
+    emit this->fValidChanged(this->fValid);
+};
+void TCalcModel::setKValid(bool val)
+{
+    this->kValid = val;
+    emit this->kValidChanged(this->kValid);
 };

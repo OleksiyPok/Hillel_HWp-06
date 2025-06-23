@@ -27,8 +27,16 @@ ApplicationWindow {
                 placeholderText:'celsius'
                 width: 100
                 text: model.cVal
-                onTextChanged:  {
+                onTextEdited:{
                     controller.cValChanged  (celsiusInput.text)
+                }
+                background: Rectangle {
+                    id: celsiusInputBackground
+                    implicitHeight: celsiusInput.height
+                    implicitWidth: celsiusInput.width
+
+                    border.color: "transparent"
+                    border.width: 2
                 }
             }
         }
@@ -45,8 +53,16 @@ ApplicationWindow {
                 placeholderText:'fahrenheit'
                 width: 100
                 text: model.fVal
-                onTextChanged: {
+                onTextEdited: {
                     controller.fValChanged(fahrenheitInput.text)
+                }
+                background: Rectangle {
+                    id: fahrenheitInputBackground
+                    implicitHeight: fahrenheitInput.height
+                    implicitWidth: fahrenheitInput.width
+
+                    border.color: "transparent"
+                    border.width: 2
                 }
 
             }
@@ -64,10 +80,34 @@ ApplicationWindow {
                 placeholderText:'kelvin'
                 width: 100
                  text: model.kVal
-                onTextChanged: {
+                onTextEdited: {
                     controller.kValChanged(kelvinInput.text)
                 }
+                background: Rectangle {
+                    id: kelvinInputBackground
+                    implicitHeight: kelvinInput.height
+                    implicitWidth: kelvinInput.width
+
+                    border.color: "transparent"
+                    border.width: 2
+                }
+
             }
+        }
+    }
+
+    Connections {
+        target: model
+        function onCValidChanged(cValid){
+            celsiusInputBackground.border.color = cValid ? "transparent" : "red"
+        }
+
+        function onfValidChanged(fValid){
+            fahrenheitInputBackground.border.color = fValid ? "transparent" : "red"
+        }
+
+        function onKValidChanged(kValid){
+            kelvinInputBackground.border.color = kValid ? "transparent" : "red"
         }
     }
 }
