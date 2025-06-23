@@ -11,10 +11,11 @@ bool TCalcController::cValChanged(QString cVal)
 {
     bool ok = false;
     double _cVal = cVal.toDouble(&ok);
+    bool isValid = ok && _cVal >= -273.15;
 
-    this->model->setCValid(ok);
+    this->model->setCValid(isValid);
 
-    if (ok) {
+    if (isValid) {
         this->model->setCVal(_cVal);
 
         double kelvin = Util::roundTo((_cVal + 273.15), 2);
@@ -25,6 +26,7 @@ bool TCalcController::cValChanged(QString cVal)
 
         return true;
     }
+
     return false;
 }
 
@@ -32,40 +34,44 @@ bool TCalcController::fValChanged(QString fVal)
 {
     bool ok = false;
     double _fVal = fVal.toDouble(&ok);
+    bool isValid = ok && _fVal >= -459.67;
 
-    this->model->setFValid(ok);
+    this->model->setFValid(isValid);
 
-    if (ok) {
-        this->model->setCVal(_fVal);
-
+    if (isValid) {
         double celsius = Util::roundTo(((_fVal - 32) * 5 / 9), 2);
         model->setCVal(celsius);
 
-        double kelvin = Util::roundTo((((_fVal - 32) * 5 / 9) + 273.15), 2);
+        double kelvin = Util::roundTo(celsius + 273.15, 2);
         model->setKVal(kelvin);
+
+        model->setFVal(_fVal);
 
         return true;
     }
+
     return false;
-};
+}
 
 bool TCalcController::kValChanged(QString kVal)
 {
     bool ok = false;
     double _kVal = kVal.toDouble(&ok);
+    bool isValid = ok && _kVal >= 0.0;
 
-    this->model->setKValid(ok);
+    this->model->setKValid(isValid);
 
-    if (ok) {
-        this->model->setCVal(_kVal);
-
+    if (isValid) {
         double celsius = Util::roundTo((_kVal - 273.15), 2);
         model->setCVal(celsius);
 
-        double fahrenheit = Util::roundTo(((_kVal - 273.15) * 9 / 5 + 32), 2);
+        double fahrenheit = Util::roundTo(celsius * 9 / 5 + 32, 2);
         model->setFVal(fahrenheit);
+
+        model->setKVal(_kVal);
 
         return true;
     }
+
     return false;
-};
+}
